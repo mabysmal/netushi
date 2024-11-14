@@ -9,7 +9,7 @@ export default function Home() {
       {/* Background pattern */}
       <div className="fixed inset-0 opacity-5 pointer-events-none">
         <div className="flex flex-wrap gap-8 p-4">
-          {Array(100).fill('🍣 🥢 🍙').map((emoji, index) => (
+          {Array(500).fill('🍣 🥢 🍙').map((emoji, index) => (
             <span key={index} className="text-2xl">{emoji}</span>
           ))}
         </div>
