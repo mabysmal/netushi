@@ -13,8 +13,8 @@ media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
 locale: 'es'
-site_url: 'https://macanazos.memaxo.art'
-logo_url: 'https://macanazos.memaxo.art/macanazos-logo-azul-borders.svg'
+site_url: 'https://netushi.com'
+logo_url: 'a'
 
 
 collections:
