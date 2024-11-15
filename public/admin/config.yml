@@ -18,6 +18,20 @@ site_url: 'https://netushi.com'
 logo_url: 'Netushi'
 
 collections:
+  -name: "banner-imagenes"
+    label: "Imagenes de Banner"
+    folder: "content/bannerimgs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+       - label: "Imagenes"
+          name: "imagenes"
+          widget: "image"
+          required: false
+          allow_multiple: true
+      
+
+
   - name: "apps-delivery"
     label: "AppsDelivery"
     folder: "content/apps-delivery"
@@ -67,6 +81,7 @@ collections:
         name: "image"
         widget: "image"
         required: true
+        allow_multiple: false
         media_library:
           config:
             multiple: false
@@ -85,7 +100,7 @@ collections:
           - { label: "Complementos", value: "complementos" }
           - { label: "Bebidas", value: "bebidas" }
       
-      - label: "Orden de Visualización"
+      - label: "Orden de Visualización (0 = primer producto enlistado, 1= segundo producto enlistado, etc.)"
         name: "order"
         widget: "number"
         required: true
