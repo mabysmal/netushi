@@ -18,6 +18,30 @@ site_url: 'https://netushi.com'
 logo_url: 'a'
 
 collections:
+    - name: "AppsDelivery"
+    label: "apps-delivery"
+    folder: "content/redes-sociales"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      -label: "didifood"
+        name: "DidiFood"
+        widget: "text"
+        required: false
+
+        -label: "ubereats"
+        name: "UberEats"
+        widget: "text"
+        required: false
+
+        -label: "rappi"
+        name: "Rappi"
+        widget: "text"
+        required: false
+
+
+
+
   - name: "menu"
     label: "Menú"
     folder: "content/menu"
