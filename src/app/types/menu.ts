@@ -1,5 +1,12 @@
-export type CategoryKey = 'promociones' | 'aperitivos' | 'rollos-frios' | 'rollos-frios-especiales' | 
-                         'rollos-calientes' | 'rollos-calientes-especiales' | 'complementos' | 'bebidas';
+export type CategoryKey = 
+  | 'promociones'
+  | 'aperitivos'
+  | 'rollos-frios'
+  | 'rollos-frios-especiales'
+  | 'rollos-calientes'
+  | 'rollos-calientes-especiales'
+  | 'complementos'
+  | 'bebidas';
 
 export interface MenuItem {
   title: string;
