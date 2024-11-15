@@ -3,13 +3,13 @@ import CarouselSection from "./componentes/BannerSection";
 import BusinessHoursSection from "./componentes/BusinessHoursSection";
 import DeliveryButtons from "./componentes/DeliveryButtons";
 
+
 export default async function Home() {
   const deliveryLinks = await getDeliveryLinks();
 
   return (
     <div className="min-h-screen bg-black text-white relative">
-      {/* Background pattern */}
-      <div className="fixed inset-0 opacity-5 pointer-events-none">
+      <div className="fixed inset-0 opacity-5 pointer-events-none" >
         <div className="flex flex-wrap gap-8 p-4">
           {Array(500).fill('🍣 🥢 🍙').map((emoji, index) => (
             <span key={index} className="text-2xl">{emoji}</span>
