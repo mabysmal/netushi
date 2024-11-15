@@ -25,6 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
