@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Script from "next/script";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -25,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
