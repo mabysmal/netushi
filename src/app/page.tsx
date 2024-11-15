@@ -1,9 +1,11 @@
-// import Image from "next/image";
+import { getDeliveryLinks } from './utils/getData';
 import CarouselSection from "./componentes/BannerSection";
 import BusinessHoursSection from "./componentes/BusinessHoursSection";
+import DeliveryButtons from "./componentes/DeliveryButtons";
 
+export default async function Home() {
+  const deliveryLinks = await getDeliveryLinks();
 
-export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Background pattern */}
@@ -25,7 +27,7 @@ export default function Home() {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Ordena ahora</h2>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          {/* <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             <a href="#" className="bg-red-500 px-8 py-4 rounded-lg hover:bg-red-600 transition-colors">
               Uber Eats
             </a>
@@ -35,7 +37,8 @@ export default function Home() {
             <a href="#" className="bg-red-500 px-8 py-4 rounded-lg hover:bg-red-600 transition-colors">
               Didi Food
             </a>
-          </div>
+          </div> */}
+          <DeliveryButtons deliveryLinks={deliveryLinks} />
         </section>
 
         <section id="Horario" >

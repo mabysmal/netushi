@@ -20,7 +20,7 @@ logo_url: 'a'
 collections:
   - name: "apps-delivery"
     label: "AppsDelivery"
-    folder: "content/redes-sociales"
+    folder: "content/apps-delivery"
     create: true
     slug: "{{slug}}"
     fields:
