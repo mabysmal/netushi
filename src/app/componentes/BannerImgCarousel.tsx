@@ -94,14 +94,26 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
         aria-label="Previous slide"
       >
-        <Image src="/arrowleft.svg" alt="Previous" width={24} height={24} />
+        <Image 
+          src="/CilArrowCircleLeft.svg"  
+          alt="Previous" 
+          width={24} 
+          height={24}
+          className="brightness-0 invert" // Add these classes
+        />
       </button>
       <button 
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
         aria-label="Next slide"
       >
-        <Image src="/arrowright.svg" alt="Next" width={24} height={24} />
+        <Image 
+          src="/CilArrowCircleRight.svg" 
+          alt="Next" 
+          width={24} 
+          height={24}
+          className="brightness-0 invert" // Add these classes
+        />
       </button>
     </div>
   );

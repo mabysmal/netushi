@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getDeliveryLinks } from './utils/getData';
 import CarouselSection from "./componentes/BannerSection";
 import BusinessHoursSection from "./componentes/BusinessHoursSection";
@@ -21,8 +22,18 @@ export default async function Home() {
 
       <div className="relative z-10 flex flex-col min-h-screen text-white">
         <header className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Sushi Empanizado</h1>
-          <p className="text-xl text-red-500">La mejor fusión de sabores</p>
+          {/* <h1 className="text-4xl md:text-6xl font-bold mb-4">Sushi Empanizado</h1> */}
+          <div className="w-[50%] max-w-[350px] mx-auto"> {/* Contenedor para el logo */}
+            <Image
+              src="/5.png"
+              width={500}
+              height={500}
+              alt="Netushi Logo"
+              className="w-full h-auto"
+              priority  
+            />
+          </div>
+          {/* <p className="text-xl text-red-500">La mejor fusión de sabores</p> */}
         </header>
 
         <CarouselSection />
