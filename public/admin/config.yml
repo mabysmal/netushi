@@ -18,19 +18,17 @@ site_url: 'https://netushi.com'
 logo_url: 'Netushi'
 
 collections:
-  -name: "banner-imagenes"
+  - name: "banner-imagenes"
     label: "Imagenes de Banner"
     folder: "content/bannerimgs"
     create: true
     slug: "{{slug}}"
     fields:
-       - label: "Imagenes"
-          name: "imagenes"
-          widget: "image"
-          required: false
-          allow_multiple: true
-      
-
+      - label: "Imagenes"
+        name: "imagenes"
+        widget: "image"
+        required: false
+        allow_multiple: true
 
   - name: "apps-delivery"
     label: "AppsDelivery"
@@ -42,12 +40,10 @@ collections:
         name: "didifood"
         widget: "text"
         required: false
-
       - label: "UberEats"
         name: "ubereats"
         widget: "text"
         required: false
-
       - label: "Rappi"
         name: "rappi"
         widget: "text"
@@ -63,12 +59,10 @@ collections:
         name: "title"
         widget: "text"
         required: true
-      
       - label: "Descripción"
         name: "description"
         widget: "text"
         required: true
-      
       - label: "Precio"
         name: "price"
         widget: "number"
@@ -76,7 +70,6 @@ collections:
         value_type: "float"
         min: 0
         step: 0.01
-      
       - label: "Imagen"
         name: "image"
         widget: "image"
@@ -85,7 +78,6 @@ collections:
         media_library:
           config:
             multiple: false
-      
       - label: "Categoría"
         name: "category"
         widget: "select"
@@ -99,7 +91,6 @@ collections:
           - { label: "Rollos Calientes Especiales", value: "rollos-calientes-especiales" }
           - { label: "Complementos", value: "complementos" }
           - { label: "Bebidas", value: "bebidas" }
-      
       - label: "Orden de Visualización (0 = primer producto enlistado, 1= segundo producto enlistado, etc.)"
         name: "order"
         widget: "number"
@@ -109,6 +100,8 @@ collections:
         step: 1
         default: 0
 
+
+        
 
   # - name: "config"
   #   label: "Config"
