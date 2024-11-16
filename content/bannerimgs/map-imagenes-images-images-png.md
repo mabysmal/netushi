@@ -1,0 +1,3 @@
+---
+imagenes: /images/images.png
+---
