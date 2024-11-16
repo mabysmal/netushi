@@ -2,19 +2,19 @@
 import React from 'react';
 import ImageCarousel from './BannerImgCarousel';
 
-const images = [
-  '/api/placeholder/800/800',
-  '/api/placeholder/800/800',
-  '/api/placeholder/800/800',
-  '/api/placeholder/800/800',
-  '/api/placeholder/800/800',
-  '/api/placeholder/800/800',
-];
+interface CarouselSectionProps {
+  bannerImages?: string[];
+}
 
-const CarouselSection = () => {
+const CarouselSection: React.FC<CarouselSectionProps> = ({ bannerImages = [] }) => {
+  // Solo mostrar el carrusel si hay imágenes
+  if (bannerImages.length === 0) {
+    return null;
+  }
+
   return (
     <section className="w-full">
-      <ImageCarousel images={images} autoplayInterval={5000} />
+      <ImageCarousel images={bannerImages} autoplayInterval={5000} />
     </section>
   );
 };

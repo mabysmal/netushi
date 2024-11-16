@@ -1,4 +1,4 @@
-export type CategoryKey = 
+export type CategoryKey =
   | 'promociones'
   | 'aperitivos'
   | 'rollos-frios'
@@ -18,7 +18,11 @@ export interface MenuItem {
 }
 
 export interface DeliveryApp {
-    didifood?: string;  // cambiado de DidiFood a didifood
-    ubereats?: string;  // cambiado de UberEats a ubereats
-    rappi?: string;     // cambiado de Rappi a rappi
-  }
+  didifood?: string;
+  ubereats?: string;
+  rappi?: string;
+}
+
+export interface BannerImages {
+  imagenes: string[];
+}
