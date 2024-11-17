@@ -24,10 +24,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Título"
-        name: "title"
-        widget: "string"
-        required: true
       - label: "Imagen"
         name: "imagenes"
         widget: "image"
