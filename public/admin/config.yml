@@ -24,11 +24,22 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Imagenes"
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Imagen"
         name: "imagenes"
         widget: "image"
-        required: false
+        required: true
         allow_multiple: true
+      - label: "Orden"
+        name: "order"
+        widget: "number"
+        required: true
+        value_type: "int"
+        min: 0
+        default: 0
 
   - name: "apps-delivery"
     label: "AppsDelivery"
@@ -38,22 +49,29 @@ collections:
     fields:
       - label: "DidiFood"
         name: "didifood"
-        widget: "text"
-        required: false
+        widget: "object"
+        fields:
+          - {label: "Link", name: "link", widget: "string", required: false}
+          - {label: "Activo", name: "active", widget: "boolean", default: true}
       - label: "UberEats"
         name: "ubereats"
-        widget: "text"
-        required: false
+        widget: "object"
+        fields:
+          - {label: "Link", name: "link", widget: "string", required: false}
+          - {label: "Activo", name: "active", widget: "boolean", default: true}
       - label: "Rappi"
         name: "rappi"
-        widget: "text"
-        required: false
+        widget: "object"
+        fields:
+          - {label: "Link", name: "link", widget: "string", required: false}
+          - {label: "Activo", name: "active", widget: "boolean", default: true}
 
   - name: "menu"
     label: "Menú"
     folder: "content/menu"
     create: true
     slug: "{{slug}}"
+    preview_path: "menu/{{slug}}"
     fields:
       - label: "Título del Producto"
         name: "title"
@@ -99,6 +117,15 @@ collections:
         min: 0
         step: 1
         default: 0
+      - label: "Etiquetas"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - { label: "Picante", value: "spicy" }
+          - { label: "Vegetariano", value: "vegetarian" }
+          - { label: "Sin Gluten", value: "gluten-free" }
 
 
         
