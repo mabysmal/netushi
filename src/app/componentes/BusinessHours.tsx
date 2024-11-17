@@ -11,25 +11,25 @@ interface BusinessHoursProps {
   hours: BusinessHoursType;
 }
 
-const BusinessHours = ({ hours }: BusinessHoursProps) => {
+const BusinessHours = ({ hours = {} }: BusinessHoursProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const checkIfOpen = () => {
     const now = new Date();
     const day = now.toLocaleDateString('es-ES', { weekday: 'long' });
     const time = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-    
+
     const dayHours = hours[day.charAt(0).toUpperCase() + day.slice(1)];
-    
+
     if (dayHours) {
       const [currentHour, currentMinute] = time.split(':');
       const [openHour, openMinute] = dayHours.open.split(':');
       const [closeHour, closeMinute] = dayHours.close.split(':');
-      
+
       const current = parseInt(currentHour) * 60 + parseInt(currentMinute);
       const open = parseInt(openHour) * 60 + parseInt(openMinute);
       const close = parseInt(closeHour) * 60 + parseInt(closeMinute);
-      
+
       setIsOpen(current >= open && current <= close);
     }
   };
@@ -38,7 +38,12 @@ const BusinessHours = ({ hours }: BusinessHoursProps) => {
     checkIfOpen();
     const interval = setInterval(checkIfOpen, 60000); // Actualizar cada minuto
     return () => clearInterval(interval);
-  }, []);
+  }, [hours]); // Añadir hours como dependencia
+
+  // Verificar que hours sea un objeto válido
+  if (!hours || typeof hours !== 'object' || Object.keys(hours).length === 0) {
+    return null;
+  }
 
   return (
     <section className="max-w-2xl mx-auto">

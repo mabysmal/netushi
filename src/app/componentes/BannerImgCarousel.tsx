@@ -8,7 +8,7 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({
-  images,
+  images = [], // Provide default value
   autoplayInterval = 5000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,13 +52,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
     );
   };
 
-  // No mostrar los botones de navegación si hay menos de 2 imágenes
-  const showNavigation = images.length > 1;
-
-  // Solo mostrar el carrusel si hay imágenes
-  if (images.length === 0) {
+  // Verificar que images sea un array válido
+  if (!Array.isArray(images) || images.length === 0) {
     return null;
   }
+
+  // No mostrar los botones de navegación si hay menos de 2 imágenes
+  const showNavigation = images.length > 1;
 
   return (
     <div className="relative w-full mb-16">
