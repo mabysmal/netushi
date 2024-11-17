@@ -27,7 +27,7 @@ export default async function Home() {
               width={500}
               height={500}
               alt='Netushi Logo'
-              className="w-[30%] h-auto flex"
+              className="hidden md:w-[30%] md:h-auto md:flex"
               priority
           />
         </div>
