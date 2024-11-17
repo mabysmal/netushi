@@ -16,10 +16,7 @@ export default async function Home() {
       
       <div className="relative z-10 flex flex-col min-h-screen text-white">
         <NavBar logoSrc="/5.png" logoAlt="Netushi Logo" />
-        <header className="container mx-auto px-4 py-8 text-center">
-          <div className="w-[50%] max-w-[350px] mx-auto">
-          </div>
-        </header>
+
 
         <div className='flex justify-center' >
           <Image
@@ -27,7 +24,7 @@ export default async function Home() {
               width={500}
               height={500}
               alt='Netushi Logo'
-              className="hidden md:w-[30%] md:h-auto md:flex"
+              className="hidden md:w-[15%] md:h-auto md:flex mt-6"
               priority
           />
         </div>
