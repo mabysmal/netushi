@@ -19,7 +19,7 @@ logo_url: 'Netushi'
 
 collections:
   - name: "banner-imagenes"
-    label: "Imagenes de Banner"
+    label: "Imagenes del Banner"
     folder: "content/bannerimgs"
     create: true
     slug: "{{slug}}"
