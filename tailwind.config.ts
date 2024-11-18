@@ -14,6 +14,11 @@ export default {
         'red': '#ff3131',
         'dark-red' : '#490d0d',
       },
+      fontFamily: {
+        'beach': ['var(--font-beach-resort)'],
+        'gotham': ['var(--font-gotham)'],
+        'sourcesans': ['var(--font-source-sans)'],
+      },
     },
   },
   plugins: [],

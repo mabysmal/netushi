@@ -32,7 +32,7 @@ export default async function Home() {
         <CarouselSection bannerImages={bannerImages} />
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Ordena ahora</h2>
+          <h2 className="font-beach text-3xl font-bold mb-8 text-center">Sushi To Go</h2>
           <DeliveryButtons deliveryLinks={deliveryLinks} />
         </section>
 
