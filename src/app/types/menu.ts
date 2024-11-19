@@ -1,6 +1,6 @@
 export type CategoryKey =
   | 'promociones'
-  | 'aperitivos'
+  | 'entradas'
   | 'rollos-frios'
   | 'rollos-frios-especiales'
   | 'rollos-calientes'

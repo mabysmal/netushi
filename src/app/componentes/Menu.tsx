@@ -9,7 +9,7 @@ interface MenuProps {
 
 const CATEGORIES_ORDER: CategoryKey[] = [
   'promociones',
-  'aperitivos',
+  'entradas',
   'rollos-frios',
   'rollos-frios-especiales',
   'rollos-calientes',
@@ -20,7 +20,7 @@ const CATEGORIES_ORDER: CategoryKey[] = [
 
 const CATEGORY_NAMES: Record<CategoryKey, string> = {
   'promociones': 'Promociones',
-  'aperitivos': 'Aperitivos',
+  'entradas': 'Entradas',
   'rollos-frios': 'Rollos Fríos',
   'rollos-frios-especiales': 'Rollos Fríos Especiales',
   'rollos-calientes': 'Rollos Calientes',
