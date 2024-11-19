@@ -19,6 +19,12 @@ export default {
         'gotham': ['var(--font-gotham)'],
         'sourcesans': ['var(--font-source-sans)'],
       },
+      backgroundImage: {
+        'brush-stroke': "url('/brush-stroke2.png')",
+      },
+      backgroundSize: {
+        '3x': '300%', // Valor personalizado para 3 veces el tamaño original
+      },
     },
   },
   plugins: [],

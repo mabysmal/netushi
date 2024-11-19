@@ -22,7 +22,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
   ];
 
   return (
-    <nav className="w-full bg-black shadow-md">
+    <nav className="w-full bg-black shadow-md ">
       <div className="max-w-6xl mx-auto px-4">
         {/* Mobile Layout */}
         <div className="flex md:hidden items-center justify-between h-30">

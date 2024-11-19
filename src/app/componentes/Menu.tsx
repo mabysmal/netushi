@@ -33,10 +33,11 @@ const MenuSection: React.FC<{ title: CategoryKey; items: MenuItem[] }> = ({ titl
   if (items.length === 0) return null;
 
   return (
-    <div className="mb-12">
+    <div className="mb-12 ">
       <h2 
-        className="text-3xl font-gotham text-white mb-6 text-center">{CATEGORY_NAMES[title]}
+        className="bg-dark-red text-3xl font-gotham text-white mb-6 text-center">{CATEGORY_NAMES[title]}
       </h2>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {items.map((item, index) => (
           <div 

@@ -15,7 +15,10 @@ export default async function MenuPage() {
         <meta name="keywords" content="sushi, sushi frito, restaurante sushi Guadalupe, Nuevo León" />
     </Head>
     <ImageBackground />
-    <NavBar logoSrc="/5.png" logoAlt="Netushi Logo" ></NavBar>
+    <div className="relative z-10 flex">
+      <NavBar logoSrc="/5.png" logoAlt="Netushi Logo" />
+    </div>
+    <h1 className="text-8xl font-beach text-white mt-4 text-center">Menú</h1>
     <Menu items={menuItems} />
     </main>
   );
