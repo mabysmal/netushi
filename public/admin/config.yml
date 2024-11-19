@@ -122,7 +122,61 @@ collections:
           - { label: "Vegetariano", value: "vegetarian" }
           - { label: "Sin Gluten", value: "gluten-free" }
 
-
+  - name: "business-hours"
+    label: "Horarios de Atención"
+    folder: "content/business-hours"
+    create: false
+    slug: "horarios"
+    fields:     
+      - label: "Lunes"
+        name: "monday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Martes"
+        name: "tuesday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Miércoles"
+        name: "wednesday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Jueves"
+        name: "thursday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Viernes"
+        name: "friday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Sábado"
+        name: "saturday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
+      - label: "Domingo"
+        name: "sunday"
+        widget: "object"
+        fields:
+          - {label: "Abierto", name: "isOpen", widget: "boolean", default: false}
+          - {label: "Hora de Apertura", name: "openTime", widget: "string", required: false}
+          - {label: "Hora de Cierre", name: "closeTime", widget: "string", required: false}
         
 
   # - name: "config"
