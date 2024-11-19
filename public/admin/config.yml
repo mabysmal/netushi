@@ -98,12 +98,11 @@ collections:
         required: true
         options:
           - { label: "Promociones", value: "promociones" }
-          - { label: "Aperitivos", value: "aperitivos" }
+          - { label: "Entradas", value: "entradas" }
           - { label: "Rollos Fríos", value: "rollos-frios" }
-          - { label: "Rollos Fríos Especiales", value: "rollos-frios-especiales" }
           - { label: "Rollos Calientes", value: "rollos-calientes" }
-          - { label: "Rollos Calientes Especiales", value: "rollos-calientes-especiales" }
           - { label: "Complementos", value: "complementos" }
+          - { label: "Extras", value: "Extras" }
           - { label: "Bebidas", value: "bebidas" }
       - label: "Orden de Visualización (0 = primer producto enlistado, 1= segundo producto enlistado, etc.)"
         name: "order"
