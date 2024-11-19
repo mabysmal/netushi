@@ -87,7 +87,7 @@ collections:
       - label: "Imagen"
         name: "image"
         widget: "image"
-        required: true
+        required: false
         allow_multiple: false
         media_library:
           config:
