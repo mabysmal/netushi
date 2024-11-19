@@ -5,6 +5,7 @@ import BusinessHoursSection from "./componentes/BusinessHoursSection";
 import DeliveryButtons from "./componentes/DeliveryButtons";
 import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
+import Head from 'next/head';
 
 export default async function Home() {
   const deliveryLinks = await getDeliveryLinks();
@@ -12,6 +13,11 @@ export default async function Home() {
 
   return (
     <main className="relative min-h-screen bg-black">
+      <Head>
+        <title>Netushi | Sushi to Go en Guadalupe</title>
+        <meta name="description" content="Prueba el mejor sushi empanizado en Guadalupe, Nuevo León. Deliciosos rollos frios, fritos y más." />
+        <meta name="keywords" content="sushi, sushi frito, restaurante sushi Guadalupe, Nuevo León" />
+      </Head>
       <ImageBackground />
       
       <div className="relative z-10 flex flex-col min-h-screen text-white">
@@ -32,7 +38,8 @@ export default async function Home() {
         <CarouselSection bannerImages={bannerImages} />
 
         <section className="mb-16">
-          <h2 className="font-beach text-3xl font-bold mb-8 text-center">Sushi To Go</h2>
+          <h1 className='font-gotham text-3xl text-center'> Sushi To Go</h1>
+          <h2 className='font-gotham text-xl text-center'> en Guadalupe, Nuevo León</h2>
           <DeliveryButtons deliveryLinks={deliveryLinks} />
         </section>
 

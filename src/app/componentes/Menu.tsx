@@ -33,13 +33,14 @@ const MenuSection: React.FC<{ title: CategoryKey; items: MenuItem[] }> = ({ titl
 
   return (
     <div className="mb-12">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">{CATEGORY_NAMES[title]}</h2>
+      <h2 className="text-3xl font-gotham text-red mb-6 text-center">{CATEGORY_NAMES[title]}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {items.map((item, index) => (
           <div 
-            key={index}
-            className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-          >
+          key={index}
+          className="flex flex-col rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          style={{ backgroundColor: '#ffffff' }}
+        >
             <div className="relative h-48 w-full">
               <Image
                 src={item.image}
