@@ -26,7 +26,7 @@ export default async function Home() {
 
         <div className='flex justify-center' >
           <Image
-              src='/5.png'
+              src='/Netushi-Logo.png'
               width={500}
               height={500}
               alt='Netushi Logo'
