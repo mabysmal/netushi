@@ -18,7 +18,6 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
     { title: 'Menú', href: '/menu' },
     { title: 'Contacto', href: '/contacto' },
     { title: 'Pide Ahora', href: '/pedidos' },
-    { title: 'Sobre Nosotros', href: '/sobre-nosotros' },
   ];
 
   return (

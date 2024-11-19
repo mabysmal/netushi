@@ -54,9 +54,9 @@ const MenuSection: React.FC<{ title: CategoryKey; items: MenuItem[] }> = ({ titl
               />
             </div>
             <div className="p-4 flex flex-col flex-grow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm flex-grow mb-3">{item.description}</p>
-              <p className="text-xl font-bold text-green-600">${item.price.toFixed(2)}</p>
+              <h3 className="font-gotham text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
+              <p className="font-sourcesans font-bold text-gray-600 text-sm flex-grow mb-3">{item.description}</p>
+              <p className="font-gotham text-xl font-bold text-green-600">${item.price.toFixed(2)}</p>
             </div>
           </div>
         ))}
