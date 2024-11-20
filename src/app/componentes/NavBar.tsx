@@ -67,6 +67,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
         <div className="hidden md:flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
+            <a href='/' >
             <Image
               src={logoSrc}
               width={120}
@@ -75,6 +76,8 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
               className="h-auto w-auto max-h-16"
               priority
             />
+            </a>
+            
           </div>
 
           {/* Desktop Menu */}
@@ -83,7 +86,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
               <a
                 key={item.title}
                 href={item.href}
-                className="text-white text-xl hover:text-red hover:text-2xl focus:text-dark-red transition-colors duration-200"
+                className="text-white text-xl hover:text-red focus:text-dark-red transition-colors duration-200"
               >
                 <span className="cursor-pointer">{item.title}</span>
               </a>

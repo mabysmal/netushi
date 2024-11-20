@@ -8,13 +8,12 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({
-  images = [], // Provide default value
+  images = [],
   autoplayInterval = 5000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
 
-  // Update slides to show based on window width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -26,77 +25,82 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
       }
     };
 
+    // Initial setup
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto-slide functionality
   useEffect(() => {
+    if (images.length <= 1) return;
+
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prev) => 
+        prev === images.length - slidesToShow ? 0 : prev + 1
+      );
     }, autoplayInterval);
 
     return () => clearInterval(interval);
-  }, [currentIndex, autoplayInterval]);
+  }, [currentIndex, autoplayInterval, images.length, slidesToShow]);
+
+  // Add debugging console logs
+  useEffect(() => {
+    console.log('Images received:', images);
+    console.log('Current slidesToShow:', slidesToShow);
+  }, [images, slidesToShow]);
+
+  if (!Array.isArray(images) || images.length === 0) {
+    console.log('No images available to display');
+    return null;
+  }
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - slidesToShow ? 0 : prevIndex + 1
+    setCurrentIndex((prev) => 
+      prev === images.length - slidesToShow ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - slidesToShow : prevIndex - 1
+    setCurrentIndex((prev) => 
+      prev === 0 ? images.length - slidesToShow : prev - 1
     );
   };
 
-  // Verificar que images sea un array válido
-  if (!Array.isArray(images) || images.length === 0) {
-    return null;
-  }
-
-  // No mostrar los botones de navegación si hay menos de 2 imágenes
-  const showNavigation = images.length > 1;
-
   return (
-    <div className="relative w-full mb-16">
+    <div className="relative w-full max-w-7xl mx-auto px-4 mb-16">
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${(currentIndex * 100) / slidesToShow}%)`,
-            width: `${(images.length * 100) / slidesToShow}%`
+            transform: `translateX(-${(currentIndex * 100) / Math.min(images.length, slidesToShow)}%)`,
+            width: `${(images.length * 100) / Math.min(images.length, slidesToShow)}%`
           }}
         >
           {images.map((img, index) => (
             <div
               key={index}
-              className="flex-shrink-0"
-              style={{ width: `${100 / images.length}%` }}
+              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2"
             >
-              <div className="aspect-square p-2">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={img}
-                    alt={`Imagen ${index + 1}`}
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
+              <div className="relative aspect-video">
+                <Image
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index === currentIndex}
+                />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {showNavigation && (
+      {images.length > 1 && (
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
+            className="absolute left-6 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
             aria-label="Previous slide"
           >
             <Image
@@ -109,7 +113,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
+            className="absolute right-6 top-1/2 -translate-y-1/2 bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors z-10"
             aria-label="Next slide"
           >
             <Image
