@@ -116,15 +116,15 @@ collections:
         min: 0
         step: 1
         default: 0
-      - label: "Etiquetas"
-        name: "tags"
-        widget: "select"
-        multiple: true
-        required: false
-        options:
-          - { label: "Picante", value: "spicy" }
-          - { label: "Vegetariano", value: "vegetarian" }
-          - { label: "Sin Gluten", value: "gluten-free" }
+      # - label: "Etiquetas"
+      #   name: "tags"
+      #   widget: "select"
+      #   multiple: true
+      #   required: false
+      #   options:
+      #     - { label: "Picante", value: "spicy" }
+      #     - { label: "Vegetariano", value: "vegetarian" }
+      #     - { label: "Sin Gluten", value: "gluten-free" }
 
   - name: "business-hours"
     label: "Horarios de Atención"
