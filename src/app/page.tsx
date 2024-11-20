@@ -6,7 +6,7 @@ import DeliveryButtons from "./componentes/DeliveryButtons";
 import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
-
+import fs from 'fs';
 
 
 export default async function Home() {
@@ -18,7 +18,7 @@ export default async function Home() {
   console.log('Delivery Links:', deliveryLinks);
   console.log('Banner Images:', bannerImages);
 
-  const fs = require('fs');
+  
   bannerImages.forEach(img => {
     const publicPath = `public${img}`;
     const exists = fs.existsSync(publicPath);
