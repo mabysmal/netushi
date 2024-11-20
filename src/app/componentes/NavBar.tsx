@@ -1,13 +1,14 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface NavBarProps {
   logoSrc: string;
   logoAlt: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
+const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,91 +22,74 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, logoAlt }) => {
   ];
 
   return (
-    <nav className="w-full bg-black shadow-md ">
+    <nav className="bg-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
         {/* Mobile Layout */}
-        <div className="flex md:hidden items-center justify-between h-30">
+        <div className="flex justify-between items-center h-16 md:hidden">
           {/* Hamburger Menu Button */}
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-red-600 focus:outline-none w-12 h-12 absolute left-4"
+            className="text-gray-500 hover:text-gray-700"
           >
             {isMenuOpen ? (
-              <Image 
-                src="/close.svg" 
-                alt="Cerrar menú"
-                width={40}
-                height={40}
-                className="brightness-0 invert"
-              />
+              <span>✕</span>
             ) : (
-              <Image 
-                src="/hamburger-menu.svg" 
-                alt="Abrir menú"
-                width={40}
-                height={40}
-                className="brightness-0 invert"
-              />
+              <span>☰</span>
             )}
-            
+            <span className="sr-only">Menu</span>
           </button>
 
           {/* Centered Logo */}
-          <div className="flex-1 flex justify-center">
+          <Link href="/" className="flex items-center">
             <Image
               src={logoSrc}
-              width={300}
-              height={300}
               alt={logoAlt}
-              className="h-auto w-auto max-h-24"
-              priority
+              width={150}
+              height={40}
+              className="h-10 w-auto"
             />
-          </div>
+          </Link>
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:flex justify-between items-center h-20">
+        <div className="hidden md:flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href='/' >
+          <Link href="/" className="flex items-center">
             <Image
               src={logoSrc}
-              width={120}
-              height={120}
               alt={logoAlt}
-              className="h-auto w-auto max-h-16"
-              priority
+              width={150}
+              height={40}
+              className="h-10 w-auto"
             />
-            </a>
-            
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="flex space-x-8">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.title}
                 href={item.href}
-                className="text-white text-xl hover:text-red focus:text-dark-red transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-900"
               >
-                <span className="cursor-pointer">{item.title}</span>
-              </a>
+                {item.title}
+              </Link>
             ))}
           </div>
         </div>
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0 bg-black shadow-lg">
-            <div className="px-2 pt-2 pb-3 space-y-1 ">
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.title}
                   href={item.href}
-                  className="block px-3 py-2 text-xl text-white focus:bg-red rounded-md transition-colors duration-200 bg-dark-red"
+                  className="block px-3 py-2 text-gray-700 hover:text-gray-900"
                 >
                   {item.title}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

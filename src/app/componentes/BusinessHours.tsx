@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface BusinessHoursType {
   [key: string]: {
@@ -14,7 +14,7 @@ interface BusinessHoursProps {
 const BusinessHours = ({ hours = {} }: BusinessHoursProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const checkIfOpen = () => {
+  const checkIfOpen = useCallback(() => {
     const now = new Date();
     const day = now.toLocaleDateString('es-ES', { weekday: 'long' });
     const time = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
@@ -32,37 +32,36 @@ const BusinessHours = ({ hours = {} }: BusinessHoursProps) => {
 
       setIsOpen(current >= open && current <= close);
     }
-  };
+  }, [hours]);
 
   useEffect(() => {
     checkIfOpen();
-    const interval = setInterval(checkIfOpen, 60000); // Actualizar cada minuto
+    const interval = setInterval(checkIfOpen, 60000);
     return () => clearInterval(interval);
-  }, [hours]); // Añadir hours como dependencia
+  }, [checkIfOpen]);
 
-  // Verificar que hours sea un objeto válido
   if (!hours || typeof hours !== 'object' || Object.keys(hours).length === 0) {
     return null;
   }
 
   return (
-    <section className="max-w-2xl mx-auto">
-      <h2 className="text-3xl font-bold mb-8 text-center">Horarios</h2>
-      <div className="bg-gray-900 rounded-lg p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-semibold">Estado actual:</h3>
-          <span className={`px-4 py-2 rounded-full ${isOpen ? 'bg-green-500' : 'bg-red-500'}`}>
+    <div className="bg-white shadow-lg rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4">Horarios</h2>
+      <div className="space-y-4">
+        <div className="flex justify-between items-center">
+          <span className="font-semibold">Estado actual:</span>
+          <span className={isOpen ? 'text-green-600' : 'text-red-600'}>
             {isOpen ? 'Abierto' : 'Cerrado'}
           </span>
         </div>
         {Object.entries(hours).map(([day, times]) => (
-          <div key={day} className="flex justify-between py-2 border-b border-gray-700">
+          <div key={day} className="flex justify-between">
             <span>{day}</span>
             <span>{times.open} - {times.close}</span>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
