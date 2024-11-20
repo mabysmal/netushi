@@ -24,11 +24,15 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - label: "Titulo"
+        name: "titulo"
+        widget: "text"
+        required: true
       - label: "Imagen"
         name: "imagenes"
         widget: "image"
         required: true
-        allow_multiple: true
+        allow_multiple: false
       - label: "Orden"
         name: "order"
         widget: "number"

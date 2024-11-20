@@ -21,14 +21,14 @@ export const getDeliveryLinks = (): DeliveryApp => {
 
 //Funcion para obtener imgs del banner
 interface BannerImage {
+  titulo: string;
   imagenes: string;
   order: number;
 }
 
-export const getBannerImages = (): string[] => {
+export const getBannerImages = (): { url: string; titulo: string }[] => {
   try {
     const directory = path.join(process.cwd(), 'content/bannerimgs');
-    
     // Verificar si el directorio existe
     if (!fs.existsSync(directory)) {
       console.log('Directory does not exist:', directory);
@@ -44,19 +44,20 @@ export const getBannerImages = (): string[] => {
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data } = matter(fileContents);
         return {
-          imagenes: data.imagenes,
+          url: data.imagenes,
+          titulo: data.titulo,
           order: data.order
-        } as BannerImage;
+        };
       })
-      .sort((a, b) => a.order - b.order) // Ordenar por el campo order
-      .map(item => item.imagenes); // Extraer solo las rutas de las imágenes
+      .sort((a, b) => a.order - b.order)
+      .map(({ url, titulo }) => ({ url, titulo }));
     
-    console.log('Found banner images:', images);
-    return images;
-  } catch (error) {
-    console.error('Error al obtener las imágenes del banner:', error);
-    return [];
-  }
+      console.log('Found banner images:', images);
+      return images;
+    } catch (error) {
+      console.error('Error al obtener las imágenes del banner:', error);
+      return [];
+    }
 };
 
 

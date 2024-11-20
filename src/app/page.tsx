@@ -8,9 +8,10 @@ import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 
 
+
 export default async function Home() {
   const deliveryLinks = await getDeliveryLinks();
-  const bannerImages = await getBannerImages();
+  const bannerImages = getBannerImages();
 
 
   //CHECANDO QUE LAS IMAGENES EXISTAN

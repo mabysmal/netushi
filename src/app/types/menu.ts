@@ -24,5 +24,11 @@ export interface DeliveryApp {
 }
 
 export interface BannerImages {
+  titulo: string
   imagenes: string[];
+}
+
+export interface BannerImage {
+  url: string;
+  titulo: string;
 }

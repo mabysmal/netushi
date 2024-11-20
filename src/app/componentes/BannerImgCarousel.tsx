@@ -1,9 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import type { BannerImage } from '../types/menu';
 
 interface ImageCarouselProps {
-  images: string[];
+  images: BannerImage[];
   autoplayInterval?: number;
 }
 
@@ -25,7 +26,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
       }
     };
 
-    // Initial setup
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -42,12 +42,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
 
     return () => clearInterval(interval);
   }, [currentIndex, autoplayInterval, images.length, slidesToShow]);
-
-  // Add debugging console logs
-  useEffect(() => {
-    console.log('Images received:', images);
-    console.log('Current slidesToShow:', slidesToShow);
-  }, [images, slidesToShow]);
 
   if (!Array.isArray(images) || images.length === 0) {
     console.log('No images available to display');
@@ -83,8 +77,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             >
               <div className="relative aspect-video">
                 <Image
-                  src={img}
-                  alt={`Slide ${index + 1}`}
+                  src={img.url}
+                  alt={img.titulo || 'Banner image'}
                   fill
                   className="object-cover rounded-lg"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

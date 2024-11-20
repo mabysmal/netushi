@@ -1,9 +1,10 @@
 'use client'
 import React from 'react';
 import ImageCarousel from './BannerImgCarousel';
+import type { BannerImage } from '../types/menu';
 
 interface CarouselSectionProps {
-  bannerImages?: string[];
+  bannerImages?: BannerImage[];
 }
 
 const CarouselSection: React.FC<CarouselSectionProps> = ({ bannerImages = [] }) => {
