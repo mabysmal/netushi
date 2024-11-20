@@ -22,7 +22,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-black shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
         {/* Mobile Layout */}
         <div className="flex justify-between items-center h-16 md:hidden">
@@ -70,7 +70,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
               <Link
                 key={item.title}
                 href={item.href}
-                className="text-gray-700 hover:text-gray-900"
+                className="text-red hover:text-white focus:text-dark-red"
               >
                 {item.title}
               </Link>
