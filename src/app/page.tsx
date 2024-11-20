@@ -7,9 +7,22 @@ import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 
+
 export default async function Home() {
   const deliveryLinks = await getDeliveryLinks();
   const bannerImages = await getBannerImages();
+
+
+  //CHECANDO QUE LAS IMAGENES EXISTAN
+  console.log('Delivery Links:', deliveryLinks);
+  console.log('Banner Images:', bannerImages);
+
+  const fs = require('fs');
+  bannerImages.forEach(img => {
+    const publicPath = `public${img}`;
+    const exists = fs.existsSync(publicPath);
+    console.log(`Image ${img} exists: ${exists}`);
+  });
 
   return (
     <main className="relative min-h-screen bg-black">
@@ -35,7 +48,15 @@ export default async function Home() {
           />
         </div>
         
-        <CarouselSection bannerImages={bannerImages} />
+        {/* VERIFICACION VISUAL DE IMAGENES DEL CAROUSEL
+        <div className="p-4 bg-gray-800">
+          <h3 className="text-white">Debug Info:</h3>
+          <pre className="text-white text-sm">
+            {JSON.stringify({ bannerImages }, null, 2)}
+          </pre>
+        </div> */}
+      
+      <CarouselSection bannerImages={bannerImages} />
 
         <section className="mb-16">
           <h1 className='font-gotham text-3xl text-center'> Sushi To Go</h1>

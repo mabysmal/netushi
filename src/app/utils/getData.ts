@@ -20,29 +20,46 @@ export const getDeliveryLinks = (): DeliveryApp => {
 };
 
 //Funcion para obtener imgs del banner
+interface BannerImage {
+  imagenes: string;
+  order: number;
+}
+
 export const getBannerImages = (): string[] => {
   try {
     const directory = path.join(process.cwd(), 'content/bannerimgs');
     
     // Verificar si el directorio existe
     if (!fs.existsSync(directory)) {
+      console.log('Directory does not exist:', directory);
       return [];
     }
     
     const files = fs.readdirSync(directory);
     
-    if (files.length > 0) {
-      const fullPath = path.join(directory, files[0]);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-      return (data as BannerImages).imagenes || [];
-    }
-    return [];
+    // Leer y procesar cada archivo
+    const images = files
+      .map(fileName => {
+        const fullPath = path.join(directory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data } = matter(fileContents);
+        return {
+          imagenes: data.imagenes,
+          order: data.order
+        } as BannerImage;
+      })
+      .sort((a, b) => a.order - b.order) // Ordenar por el campo order
+      .map(item => item.imagenes); // Extraer solo las rutas de las imágenes
+    
+    console.log('Found banner images:', images);
+    return images;
   } catch (error) {
     console.error('Error al obtener las imágenes del banner:', error);
     return [];
   }
 };
+
+
 // Función para obtener todos los items del menú
 export const getMenuItems = (): MenuItem[] => {
   const directory = path.join(process.cwd(), 'content/menu');
