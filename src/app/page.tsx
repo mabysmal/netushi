@@ -30,7 +30,8 @@ export default async function Home() {
       <Head>
         <title>Netushi | Sushi to Go en Guadalupe</title>
         <meta name="description" content="Prueba el mejor sushi empanizado en Guadalupe, Nuevo León. Deliciosos rollos frios, fritos y más." />
-        <meta name="keywords" content="sushi, sushi frito, restaurante sushi Guadalupe, Nuevo León" />
+        <meta name="keywords" content="sushi, sushi frito, restaurante, Guadalupe, Nuevo León" />
+        <meta name="author" content="Netushi" />
       </Head>
       <ImageBackground />
       

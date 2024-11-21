@@ -45,7 +45,7 @@ const BusinessHours = ({ hours = {} }: BusinessHoursProps) => {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6">
+    <div className="bg-black shadow-lg rounded-lg p-6 max-w-full md:ml-[30%] md:max-w-[40%]">
       <h2 className="text-2xl font-bold mb-4">Horarios</h2>
       <div className="space-y-4">
         <div className="flex justify-between items-center">

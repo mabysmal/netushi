@@ -13,23 +13,32 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   autoplayInterval = 5000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(3);
+const [slidesToShow, setSlidesToShow] = useState(3);
+const [imageHeight, setImageHeight] = useState('50vh');
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setSlidesToShow(1);
-      } else if (window.innerWidth < 1024) {
-        setSlidesToShow(2);
-      } else {
-        setSlidesToShow(3);
-      }
-    };
+useEffect(() => {
+  const handleResize = () => {
+    const width = window.innerWidth;
+    
+    if (width < 768) {
+      // Dispositivos pequeños (móviles)
+      setSlidesToShow(1);
+      setImageHeight('40vh');
+    } else if (width < 1024) {
+      // Dispositivos medianos (tablets)
+      setSlidesToShow(2);
+      setImageHeight('30vh');
+    } else {
+      // Dispositivos grandes (laptops/escritorio)
+      setSlidesToShow(3);
+      setImageHeight('50vh');
+    }
+  };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -61,34 +70,37 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   };
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 mb-16">
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(currentIndex * 100) / Math.min(images.length, slidesToShow)}%)`,
-            width: `${(images.length * 100) / Math.min(images.length, slidesToShow)}%`
-          }}
-        >
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2"
-            >
-              <div className="relative aspect-video">
-                <Image
-                  src={img.url}
-                  alt={img.titulo || 'Banner image'}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority={index === currentIndex}
-                />
-              </div>
+  <div
+    className="relative w-full max-w-7xl mx-auto px-4 mb-16"
+    style={{ maxHeight: imageHeight, overflow: 'hidden' }}
+  >
+    <div className="overflow-hidden">
+      <div
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{
+          transform: `translateX(-${(currentIndex * 100) / Math.min(images.length, slidesToShow)}%)`,
+          width: `${(images.length * 100) / Math.min(images.length, slidesToShow)}%`
+        }}
+      >
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2"
+          >
+            <div className="relative aspect-video">
+            <Image
+              src={img.url}
+              alt={img.titulo || 'Banner image'}
+              fill
+              className="object-cover rounded-lg h-[var(--image-height)]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              priority={index === currentIndex}
+            />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
 
       {images.length > 1 && (
         <>
@@ -100,8 +112,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             <Image
               src="/CilArrowCircleLeft.svg"
               alt="Previous"
-              width={24}
-              height={24}
+              width={48}
+              height={48}
               className="brightness-0 invert"
             />
           </button>
@@ -113,8 +125,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             <Image
               src="/CilArrowCircleRight.svg"
               alt="Next"
-              width={24}
-              height={24}
+              width={48}
+              height={48}
               className="brightness-0 invert"
             />
           </button>
