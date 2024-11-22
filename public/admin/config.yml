@@ -80,7 +80,7 @@ collections:
       - label: "Descripción"
         name: "description"
         widget: "text"
-        required: false
+        required: true
       - label: "Precio"
         name: "price"
         widget: "number"
@@ -91,7 +91,7 @@ collections:
       - label: "Imagen"
         name: "image"
         widget: "image"
-        required: false
+        required: true
         allow_multiple: false
         media_library:
           config:
