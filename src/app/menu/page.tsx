@@ -33,7 +33,7 @@ export default async function MenuPage() {
       <ImageBackground />
 
       <div className="relative z-10 flex flex-col text-white">
-          <NavBar logoSrc="/5.png" logoAlt="Netushi Logo" />
+          <NavBar logoSrc="/Netushi-Logo.png" logoAlt="Netushi Logo" />
       </div>
     
       <h1 className="text-8xl font-beach text-white mt-4 text-center">Menú</h1>

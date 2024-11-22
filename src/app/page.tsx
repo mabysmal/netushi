@@ -37,7 +37,7 @@ export default async function Home() {
       <ImageBackground />
       
       <div className="relative z-10 flex flex-col min-h-screen text-white">
-        <NavBar logoSrc="/5.png" logoAlt="Netushi Logo" />
+        <NavBar logoSrc="/Netushi-Logo.png" logoAlt="Netushi Logo" />
 
 
         <div className='flex justify-center' >
