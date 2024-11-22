@@ -18,16 +18,29 @@ export const getDeliveryLinks = (): DeliveryApp => {
   return {};
 };
 
-export const debugMenuItems = () => {
+// Interfaz para los datos del menú en el debugger
+interface MenuItemData {
+  title?: string;
+  description?: string;
+  price?: number;
+  image?: string;
+  category?: string;
+  order?: number;
+}
+
+// Interfaz para la información de depuración
+interface DebugInfo {
+  fileName: string;
+  parsed: boolean;
+  error?: string;
+  data?: MenuItemData;
+}
+
+export const debugMenuItems = (): DebugInfo[] => {
   const directory = path.join(process.cwd(), 'content/menu');
   const files = fs.readdirSync(directory);
   
-  const debugInfo: {
-    fileName: string;
-    parsed: boolean;
-    error?: string;
-    data?: any;
-  }[] = [];
+  const debugInfo: DebugInfo[] = [];
 
   files.forEach(fileName => {
     try {
@@ -36,25 +49,26 @@ export const debugMenuItems = () => {
       
       // Intenta parsear el archivo
       const { data } = matter(fileContents);
+      const menuData = data as MenuItemData;
       
       // Validaciones específicas
       const issues: string[] = [];
       
-      if (!data.title) issues.push('Missing title');
-      if (!data.category) issues.push('Missing category');
-      if (typeof data.price !== 'number') issues.push('Price is not a number');
-      if (typeof data.order !== 'number') issues.push('Order is not a number');
+      if (!menuData.title) issues.push('Missing title');
+      if (!menuData.category) issues.push('Missing category');
+      if (typeof menuData.price !== 'number') issues.push('Price is not a number');
+      if (typeof menuData.order !== 'number') issues.push('Order is not a number');
       
       // Normaliza la categoría a minúsculas
-      if (data.category) {
-        data.category = data.category.toLowerCase();
+      if (menuData.category) {
+        menuData.category = menuData.category.toLowerCase();
       }
 
       debugInfo.push({
         fileName,
         parsed: true,
         error: issues.length > 0 ? issues.join(', ') : undefined,
-        data
+        data: menuData
       });
     } catch (error) {
       debugInfo.push({
