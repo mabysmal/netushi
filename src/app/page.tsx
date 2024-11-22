@@ -67,6 +67,7 @@ export default async function Home() {
       
 
         <section className="mb-16">
+           <h2 className='font-gotham text-xl text-center mx-[20%] mb-6'>Tu sushi favorito directo a tu puerta. Ordena ahora:</h2>
           <DeliveryButtons deliveryLinks={deliveryLinks} />
         </section>
 

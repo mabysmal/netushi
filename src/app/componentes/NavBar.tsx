@@ -16,9 +16,10 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
   };
 
   const menuItems = [
+    { title: 'Inicio', href: '/' },
     { title: 'Menú', href: '/menu' },
     // { title: '', href: '/contacto' },
-    { title: 'Sobre Nosotros', href: '/aboutus' },
+    { title: 'Nosotros', href: '/aboutus' },
   ];
 
   return (
@@ -29,7 +30,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
           {/* Hamburger Menu Button */}
           <button
             onClick={toggleMenu}
-            className="text-gray-500 hover:text-gray-700"
+            className="text-white focus:text-red"
           >
             {isMenuOpen ? (
               <span>✕</span>
@@ -86,7 +87,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-gray-900"
+                  className="block px-3 py-2 text-white text-bold text-lg focus:text-red"
                 >
                   {item.title}
                 </Link>

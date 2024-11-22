@@ -1,13 +1,16 @@
 import Menu from "../componentes/Menu";
 import Head from "next/head";
 import ImageBackground from "../componentes/RepeatingBackground";
-import { getMenuItems } from "../utils/getData";
+import { getMenuItems, getDeliveryLinks } from "../utils/getData";
 import NavBar from "../componentes/NavBar";
+import DeliveryButtons from "../componentes/DeliveryButtons";
 
 export default async function MenuPage() {
   const menuItems = await getMenuItems();
+  const deliveryLinks = await getDeliveryLinks();
   
   return (
+
     <main className="min-h-screen bg-black">
       <Head>
         <link rel="icon" type="image/png" href="/icon.png" />
@@ -34,6 +37,9 @@ export default async function MenuPage() {
       </div>
     
       <h1 className="text-8xl font-beach text-white mt-4 text-center">Menú</h1>
+      <section className="mb-2">
+          <DeliveryButtons deliveryLinks={deliveryLinks} />
+      </section>
       <Menu items={menuItems} />
     </main>
   );
