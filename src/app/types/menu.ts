@@ -24,11 +24,13 @@ export interface DeliveryApp {
 }
 
 export interface BannerImages {
-  titulo: string
+  titulo: string;
   imagenes: string[];
+  order: number;
 }
 
 export interface BannerImage {
   url: string;
   titulo: string;
+  order:number
 }
