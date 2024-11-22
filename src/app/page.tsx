@@ -49,7 +49,10 @@ export default async function Home() {
               className="hidden md:w-[15%] md:h-auto md:flex mt-6"
               priority
           />
+          
         </div>
+        <h1 className='font-gotham text-3xl text-center'> Sushi To Go</h1>
+        <h2 className='font-gotham text-xl text-center'> en Guadalupe, Nuevo León</h2>
         
         {/* VERIFICACION VISUAL DE IMAGENES DEL CAROUSEL
         <div className="p-4 bg-gray-800">
@@ -58,12 +61,12 @@ export default async function Home() {
             {JSON.stringify({ bannerImages }, null, 2)}
           </pre>
         </div> */}
+      <section className='mt-4' >
+        <CarouselSection bannerImages={bannerImages} />
+      </section>
       
-      <CarouselSection bannerImages={bannerImages} />
 
         <section className="mb-16">
-          <h1 className='font-gotham text-3xl text-center'> Sushi To Go</h1>
-          <h2 className='font-gotham text-xl text-center'> en Guadalupe, Nuevo León</h2>
           <DeliveryButtons deliveryLinks={deliveryLinks} />
         </section>
 
