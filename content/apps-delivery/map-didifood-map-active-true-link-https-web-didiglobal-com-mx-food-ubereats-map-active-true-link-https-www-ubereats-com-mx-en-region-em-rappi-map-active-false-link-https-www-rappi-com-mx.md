@@ -1,6 +1,6 @@
 ---
 didifood:
-  active: true
+  active: false
   link: https://web.didiglobal.com/mx/food/
 ubereats:
   active: true
