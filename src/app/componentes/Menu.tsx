@@ -11,10 +11,9 @@ const CATEGORIES_ORDER: CategoryKey[] = [
   'promociones',
   'entradas',
   'rollos-frios',
-  'rollos-frios-especiales',
   'rollos-calientes',
-  'rollos-calientes-especiales',
   'complementos',
+  'extras',
   'bebidas'
 ];
 
@@ -22,10 +21,9 @@ const CATEGORY_NAMES: Record<CategoryKey, string> = {
   'promociones': 'Promociones',
   'entradas': 'Entradas',
   'rollos-frios': 'Rollos Fríos',
-  'rollos-frios-especiales': 'Rollos Fríos Especiales',
   'rollos-calientes': 'Rollos Calientes',
-  'rollos-calientes-especiales': 'Rollos Calientes Especiales',
   'complementos': 'Complementos',
+  'extras' : 'Extras',
   'bebidas': 'Bebidas'
 };
 
