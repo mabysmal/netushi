@@ -17,7 +17,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({
 }) => {
   return (
     <section id='DeliveryApps' className='mt-4 px-4 max-w-2xl mx-auto'>
-      <h2 className='font-gotham text-xl text-center mb-6'>Ordena a través de tus apps favoritas</h2>
+      <h2 className='font-gotham text-xl text-center mb-6'>Tu sushi favorito directo a tu puerta. Ordena ahora</h2>
       
       {/* Container que cambia de columna a fila según el breakpoint */}
       <div className="flex flex-col lg:flex-row gap-4 justify-center items-stretch">

@@ -17,8 +17,8 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
 
   const menuItems = [
     { title: 'Menú', href: '/menu' },
-    { title: 'Contacto', href: '/contacto' },
-    { title: 'Pide Ahora', href: '/pedidos' },
+    // { title: '', href: '/contacto' },
+    { title: 'Sobre Nosotros', href: '/aboutus' },
   ];
 
   return (
