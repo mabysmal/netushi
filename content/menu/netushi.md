@@ -1,9 +1,9 @@
 ---
 title: "Netushi "
-description: Empanizado panko y queso manchego por fuera. Por dentro, pepino,
-  aguacate, queso crema, y camaron
+description: Empanizado panko y gratinado de queso manchego por fuera. Por
+  dentro arroz, pepino, aguacate y queso crema.
 price: 80
-image: /images/ksnip_20241113-222211.png
+image: ""
 category: rollos-calientes
-order: 0
+order: 2
 ---
