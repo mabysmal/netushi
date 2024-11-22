@@ -1,7 +1,7 @@
 ---
 title: Champiñones Empanizados
-description: 6 Piezas de champiñones rellenos de queso philadelphia empanizadas con panko.
-price: 280
+description: 6 Piezas de champiñones rellenos de queso crema empanizadas con panko.
+price: 280.03
 image: /images/600x400.svg
 category: entradas
 order: 1
