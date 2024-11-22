@@ -21,7 +21,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({
       
       {/* Container que cambia de columna a fila según el breakpoint */}
       <div className="flex flex-col lg:flex-row gap-5 justify-center items-stretch">
-        {deliveryLinks.didifood && (
+        {/* {deliveryLinks.didifood && (
           <a 
             href={deliveryLinks.didifood}
             target="_blank"
@@ -36,7 +36,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({
               className="w-auto h-8"
             />
           </a>
-        )}
+        )} */}
         
         {deliveryLinks.ubereats && (
           <a
