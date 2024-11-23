@@ -129,7 +129,7 @@ collections:
   - name: "business-hours"
     label: "Horarios de Atención"
     folder: "content/business-hours"
-    create: true
+    create: false
     slug: "horarios"
     fields:     
       - label: "Lunes"

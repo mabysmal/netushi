@@ -1,23 +1,30 @@
 import Image from 'next/image';
 import { getDeliveryLinks, getBannerImages } from './utils/getData';
 import CarouselSection from "./componentes/BannerSection";
-import BusinessHoursSection from "./componentes/BusinessHoursSection";
 import DeliveryButtons from "./componentes/DeliveryButtons";
 import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 import fs from 'fs';
+import BusinessHours from './componentes/BusinessHours';
+import { getBusinessHours } from './utils/getData';
+
 
 
 export default async function Home() {
   const deliveryLinks = await getDeliveryLinks();
   const bannerImages = getBannerImages();
+  const businessHours = await getBusinessHours();
 
 
   //CHECANDO QUE LAS IMAGENES EXISTAN
   console.log('Delivery Links:', deliveryLinks);
   console.log('Banner Images:', bannerImages);
 
+  if (!businessHours) {
+    // Manejo del caso cuando no hay datos
+    return <div>Error cargando horarios</div>;
+  }
   
   bannerImages.forEach(img => {
     const publicPath = `public${img}`;
@@ -72,7 +79,7 @@ export default async function Home() {
         </section>
 
         <section id="Horario">
-          <BusinessHoursSection />
+          <BusinessHours businessHours={businessHours} ></BusinessHours>
         </section>
 
         <footer className="bg-black mt-2">

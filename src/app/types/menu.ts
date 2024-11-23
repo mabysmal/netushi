@@ -42,3 +42,36 @@ export interface BannerImage {
   titulo: string;
   order:number
 }
+
+export interface BusinessHour {
+  isOpen: boolean;
+  openTime?: string;
+  closeTime?: string;
+}
+
+export interface BusinessHours {
+  monday: BusinessHour;
+  tuesday: BusinessHour;
+  wednesday: BusinessHour;
+  thursday: BusinessHour;
+  friday: BusinessHour;
+  saturday: BusinessHour;
+  sunday: BusinessHour;
+}
+
+export type DaySchedule = {
+  isOpen: boolean;
+  openTime: string;
+  closeTime: string;
+};
+
+
+export interface BusinessHoursData {
+  monday: string;
+  tuesday: string;
+  wednesday: string;
+  thursday: string;
+  friday: string;
+  saturday: string;
+  sunday: string;
+}
