@@ -44,7 +44,7 @@ collections:
   - name: "apps-delivery"
     label: "AppsDelivery"
     folder: "content/apps-delivery"
-    create: true
+    create: false
     slug: "{{slug}}"
     fields:
       - label: "DidiFood"
