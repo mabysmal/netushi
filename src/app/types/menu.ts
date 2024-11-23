@@ -17,9 +17,18 @@ export interface MenuItem {
 }
 
 export interface DeliveryApp {
-  didifood?: string;
-  ubereats?: string;
-  rappi?: string;
+  didifood?: {
+    link: string;
+    active: boolean;
+  };
+  ubereats?: {
+    link: string;
+    active: boolean;
+  };
+  rappi?: {
+    link: string;
+    active: boolean;
+  };
 }
 
 export interface BannerImages {
