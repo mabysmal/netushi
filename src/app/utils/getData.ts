@@ -4,24 +4,6 @@ import matter from 'gray-matter';
 import type { DeliveryApp, MenuItem, BusinessHours } from '../types/menu';
 import { BusinessHoursData } from '../types/menu';
 
-export async function getBusinessHours(): Promise<BusinessHoursData | null> {
-  try {
-    // Aquí tu lógica para obtener los datos
-    const hours: BusinessHoursData = {
-      monday: "11:00 - 21:00",
-      tuesday: "11:00 - 21:00",
-      wednesday: "11:00 - 21:00",
-      thursday: "11:00 - 21:00",
-      friday: "11:00 - 22:00",
-      saturday: "11:00 - 22:00",
-      sunday: "11:00 - 21:00"
-    };
-    return hours;
-  } catch (error) {
-    console.error('Error fetching business hours:', error);
-    return null;
-  }
-}
 
 // Función para obtener los enlaces de delivery
 export const getDeliveryLinks = (): DeliveryApp => {
