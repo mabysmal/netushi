@@ -30,7 +30,8 @@ export default async function Home() {
   });
 
   return (
-    <main className="relative min-h-screen bg-black">
+    
+    <main >
       <Head>
         <link rel="icon" type="image/png" href="/icon.png" />
         <title>Netushi | Sushi to Go en Guadalupe</title>
@@ -38,7 +39,7 @@ export default async function Home() {
         <meta name="keywords" content="sushi, sushi frito, restaurante, Guadalupe, Nuevo León" />
         <meta name="author" content="Netushi" />
       </Head>
-      <ImageBackground />
+      
       
       <div className="relative z-10 flex flex-col min-h-screen text-white">
         <NavBar logoSrc="/Netushi-Logo.png" logoAlt="Netushi Logo" />
