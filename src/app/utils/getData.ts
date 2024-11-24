@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import type { DeliveryApp, MenuItem, BusinessHours } from '../types/menu';
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { DeliveryApp, MenuItem } from '../types/menu';
 
 
 // Función para obtener los enlaces de delivery
