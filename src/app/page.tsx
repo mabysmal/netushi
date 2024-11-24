@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import ResponsiveBackground from './componentes/Background';
 import { getDeliveryLinks, getBannerImages } from './utils/getData';
 import CarouselSection from "./componentes/BannerSection";
 import DeliveryButtons from "./componentes/DeliveryButtons";
-import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 import fs from 'fs';
@@ -32,6 +32,7 @@ export default async function Home() {
   return (
     
     <main >
+      <ResponsiveBackground />
       <Head>
         <link rel="icon" type="image/png" href="/icon.png" />
         <title>Netushi | Sushi to Go en Guadalupe</title>
@@ -66,14 +67,16 @@ export default async function Home() {
             {JSON.stringify({ bannerImages }, null, 2)}
           </pre>
         </div> */}
-      <section className='mt-4' >
-        <CarouselSection bannerImages={bannerImages} />
-      </section>
+      
       
 
         <section className="mb-16">
            <h2 className='font-gotham text-xl text-center mx-[20%] mb-6'>Tu sushi favorito directo a tu puerta. Ordena ahora:</h2>
           <DeliveryButtons deliveryLinks={deliveryLinks} />
+        </section>
+
+        <section id='carrusel' className='mt-4' >
+          <CarouselSection bannerImages={bannerImages} />
         </section>
 
         <section id="Horario">

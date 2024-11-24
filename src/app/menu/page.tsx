@@ -1,6 +1,6 @@
 import Menu from "../componentes/Menu";
 import Head from "next/head";
-import ImageBackground from "../componentes/RepeatingBackground";
+import ResponsiveBackground from "../componentes/Background";
 import { getMenuItems, getDeliveryLinks } from "../utils/getData";
 import NavBar from "../componentes/NavBar";
 import DeliveryButtons from "../componentes/DeliveryButtons";
@@ -12,6 +12,7 @@ export default async function MenuPage() {
   return (
 
     <main className="min-h-screen bg-black">
+      <ResponsiveBackground />
       <Head>
         <link rel="icon" type="image/png" href="/icon.png" />
         <title>Netushi | Menú</title>
@@ -27,10 +28,7 @@ export default async function MenuPage() {
           name="author"
           content="Netushi"
         />
-
-
       </Head>
-      <ImageBackground />
 
       <div className="relative z-10 flex flex-col text-white">
           <NavBar logoSrc="/Netushi-Logo.png" logoAlt="Netushi Logo" />
