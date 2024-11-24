@@ -6,7 +6,7 @@ import ImageBackground from './componentes/RepeatingBackground';
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 import fs from 'fs';
-import BusinessHours from './componentes/Horarios';
+import HorarioRestaurante from './componentes/Horario';
 
 
 
@@ -76,7 +76,7 @@ export default async function Home() {
         </section>
 
         <section id="Horario">
-          <BusinessHours />
+          <HorarioRestaurante />
         </section>
 
         <footer className="bg-black mt-2">

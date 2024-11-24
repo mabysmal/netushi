@@ -157,39 +157,39 @@ export const getMenuItems = (): MenuItem[] => {
   });
 };
 
-const defaultSchedule: BusinessHours = {
-  monday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
-  tuesday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
-  wednesday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
-  thursday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
-  friday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
-  saturday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
-  sunday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
-};
+// const defaultSchedule: BusinessHours = {
+//   monday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
+//   tuesday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
+//   wednesday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
+//   thursday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
+//   friday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
+//   saturday: { isOpen: true, openTime: "12:00", closeTime: "23:00" },
+//   sunday: { isOpen: false, openTime: "12:00", closeTime: "23:00" },
+// };
 
-// Función para obtener los horarios del negocio
-export const getBusinessHours = (): BusinessHours => {
-  try {
-    const filePath = path.join(process.cwd(), "content/business-hours/horarios.md");
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const { data } = matter(fileContent);
-    return data as BusinessHours;
-  } catch (error) {
-    console.error('Error reading business hours:', error);
-    return defaultSchedule;
-  }
-};
+// // Función para obtener los horarios del negocio
+// export const getBusinessHours = (): BusinessHours => {
+//   try {
+//     const filePath = path.join(process.cwd(), "content/business-hours/horarios.md");
+//     const fileContent = fs.readFileSync(filePath, "utf-8");
+//     const { data } = matter(fileContent);
+//     return data as BusinessHours;
+//   } catch (error) {
+//     console.error('Error reading business hours:', error);
+//     return defaultSchedule;
+//   }
+// };
 
-// API handler con tipos correctos
-export default async function handler(
-  req: NextApiRequest, 
-  res: NextApiResponse<BusinessHours>
-) {
-  try {
-    const schedule = getBusinessHours();
-    res.status(200).json(schedule);
-  } catch (error) {
-    console.error('Error in business hours handler:', error);
-    res.status(200).json(defaultSchedule);
-  }
-}
+// // API handler con tipos correctos
+// export default async function handler(
+//   req: NextApiRequest, 
+//   res: NextApiResponse<BusinessHours>
+// ) {
+//   try {
+//     const schedule = getBusinessHours();
+//     res.status(200).json(schedule);
+//   } catch (error) {
+//     console.error('Error in business hours handler:', error);
+//     res.status(200).json(defaultSchedule);
+//   }
+// }
