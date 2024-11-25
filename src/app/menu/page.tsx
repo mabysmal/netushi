@@ -14,7 +14,7 @@ export default async function MenuPage() {
     <main className="min-h-screen bg-black">
       <ResponsiveBackground />
       <Head>
-        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="icon" type="image/png" href="/palillos circulo rojo y blanco.png" />
         <title>Netushi | Menú</title>
         <meta
           name="description"

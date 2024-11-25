@@ -34,7 +34,7 @@ export default async function Home() {
     <main >
       <ResponsiveBackground />
       <Head>
-        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="icon" type="image/png" href="/palillos circulo rojo y blanco.png" />
         <title>Netushi | Sushi to Go en Guadalupe</title>
         <meta name="description" content="Prueba el mejor sushi empanizado en Guadalupe, Nuevo León. Deliciosos rollos fritos, fríos y más." />
         <meta name="keywords" content="sushi, sushi frito, restaurante, Guadalupe, Nuevo León" />
