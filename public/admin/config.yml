@@ -81,13 +81,13 @@ collections:
         name: "description"
         widget: "text"
         required: true
-      - label: "Precio"
-        name: "price"
-        widget: "number"
-        required: true
-        value_type: "float"
-        min: 0
-        step: 0.01
+      # - label: "Precio"
+      #   name: "price"
+      #   widget: "number"
+      #   required: true
+      #   value_type: "float"
+      #   min: 0
+      #   step: 0.01
       - label: "Imagen"
         name: "image"
         widget: "image"

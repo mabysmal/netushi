@@ -10,7 +10,7 @@ export type CategoryKey =
 export interface MenuItem {
   title: string;
   description: string;
-  price: number;
+  // price: number;
   image: string;
   category: CategoryKey;
   order: number;

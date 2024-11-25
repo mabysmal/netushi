@@ -23,7 +23,7 @@ export const getDeliveryLinks = (): DeliveryApp => {
 interface MenuItemData {
   title?: string;
   description?: string;
-  price?: number;
+  // price?: number;
   image?: string;
   category?: string;
   order?: number;
@@ -57,7 +57,7 @@ export const debugMenuItems = (): DebugInfo[] => {
       
       if (!menuData.title) issues.push('Missing title');
       if (!menuData.category) issues.push('Missing category');
-      if (typeof menuData.price !== 'number') issues.push('Price is not a number');
+      // if (typeof menuData.price !== 'number') issues.push('Price is not a number');
       if (typeof menuData.order !== 'number') issues.push('Order is not a number');
       
       // Normaliza la categoría a minúsculas
@@ -138,7 +138,7 @@ export const getMenuItems = (): MenuItem[] => {
       }
 
       // Asegúrate de que price y order sean números
-      data.price = Number(data.price);
+      // data.price = Number(data.price);
       data.order = Number(data.order);
 
       return data as MenuItem;
