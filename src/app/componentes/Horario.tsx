@@ -83,7 +83,7 @@ const HorarioRestaurante: FC = () => {
           isOpen ? 'text-green-600' : 'text-red-600'
         }`} />
         <span className={`font-medium ${
-          isOpen ? 'text-green-600' : 'text-red-600'
+          isOpen ? 'text-green-600 text-lg' : 'text-red-600 text-lg'
         }`}>
           {statusText}
         </span>
