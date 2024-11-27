@@ -24,7 +24,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
 
   return (
     <nav className="bg-black shadow-lg">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 border-b-2 border-b-red">
         {/* Mobile Layout */}
         <div className="flex justify-between items-center h-16 md:hidden">
           {/* Hamburger Menu Button */}
@@ -53,7 +53,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:flex justify-between items-center h-16">
+        <div className="hidden md:flex justify-between items-center h-20 ">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -71,7 +71,7 @@ const NavBar = ({ logoSrc, logoAlt }: NavBarProps) => {
               <Link
                 key={item.title}
                 href={item.href}
-                className="text-red hover:text-white focus:text-dark-red"
+                className="text-red text-xl hover:text-white focus:text-dark-red"
               >
                 {item.title}
               </Link>

@@ -30,7 +30,7 @@ export default function AboutUsPage() {
 
         
 
-        <div className="py-20 px-8 flex flex-col md:flex-row w-full mx-auto">
+        <div className="py-20 px-8 flex flex-col md:flex-row w-full lg:max-w-[75%] mx-auto">
           <div id="Mision" className="md:mr-8 mb-8 md:mb-0 bg-red bg-opacity-50 rounded-lg">
             <h2 className="font-gotham font-bold text-4xl font-bold mb-4 border-b-2 border-b-white mx-6 mt-6">MISIÓN</h2>
             <p className="mb-4 font-sourcesans mx-6 mb-6 text-lg">
