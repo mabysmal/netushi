@@ -6,6 +6,7 @@ import DeliveryButtons from "./componentes/DeliveryButtons";
 import NavBar from './componentes/NavBar';
 import Head from 'next/head';
 import fs from 'fs';
+import Footer from './componentes/Footer';
 import HorarioRestaurante from './componentes/Horario';
 
 
@@ -83,11 +84,13 @@ export default async function Home() {
           <HorarioRestaurante />
         </section>
 
-        <footer className="bg-black mt-2">
+        <Footer />
+
+        {/* <footer className="bg-black mt-2">
           <span className="flex justify-center text-center">
             Made by: <a href="https://mabs.dev/" target="_blank" rel="noopener noreferrer"> mabs.dev</a>
           </span>
-        </footer>
+        </footer> */}
       </div>
     </main>
   );

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import ResponsiveBackground from "../componentes/Background";
 import NavBar from "../componentes/NavBar";
+import Footer from "../componentes/Footer";
 
 export default function AboutUsPage() {
   return (
@@ -61,24 +62,13 @@ export default function AboutUsPage() {
           </div>
         </div>
 
-        <div className="relative z-10 flex flex-col text-white p-8 md:p-12">
-          <div>
-            <h2 className="font-gotham font-bold text-4xl font-bold text-center">Síguenos en nuestras redes sociales</h2>
-          </div>
-          <div id="SocialMedia" className="flex justify-center mt-4">
-            <a id="Facebook" href="https://www.facebook.com/profile.php?id=61568059884022" target="_blank" className="mr-4">
-              <Image src="/facebook.svg" width={200} height={200} alt="Facebook Logo" />
-            </a>
-            <a id="Instagram" href="https://www.instagram.com/netushitogo/" target="_blank">
-              <Image src="/instagram.svg" width={200} height={200} alt="Instagram Logo" />
-            </a>
-          </div>
-        </div>
 
 
 
 
       </div>
+
+      <Footer />
     </main>
   );
 }

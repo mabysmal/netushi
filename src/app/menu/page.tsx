@@ -4,6 +4,7 @@ import ResponsiveBackground from "../componentes/Background";
 import { getMenuItems, getDeliveryLinks } from "../utils/getData";
 import NavBar from "../componentes/NavBar";
 import DeliveryButtons from "../componentes/DeliveryButtons";
+import Footer from "../componentes/Footer";
 
 export default async function MenuPage() {
   const menuItems = await getMenuItems();
@@ -39,6 +40,8 @@ export default async function MenuPage() {
           <DeliveryButtons deliveryLinks={deliveryLinks} />
       </section>
       <Menu items={menuItems} />
+
+      <Footer />
     </main>
   );
 }
