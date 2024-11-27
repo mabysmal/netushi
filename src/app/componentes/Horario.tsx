@@ -99,17 +99,17 @@ const HorarioRestaurante: FC = () => {
               className={`flex justify-between items-center p-4 rounded-lg transition-all ${
                 isToday 
                   ? 'bg-blue-50 shadow-md' 
-                  : 'bg-white shadow-sm hover:shadow-md'
+                  : 'bg-dark-brown bg-opacity-85 shadow-sm hover:shadow-md'
               }`}
             >
               <span className={`${
-                isToday ? 'font-bold text-blue-700' : 'font-medium text-gray-800'
+                isToday ? 'font-bold text-blue-700' : 'font-medium text-white'
               }`}>
                 {item.dia}
                 {isToday && <span className="ml-2 text-sm">(Hoy)</span>}
               </span>
               <span className={`${
-                isToday ? 'font-bold text-blue-700' : 'text-gray-600'
+                isToday ? 'font-bold text-blue-700' : 'text-white'
               }`}>
                 {item.horas}
               </span>

@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
         'red': '#ff3131',
         'dark-red' : '#490d0d',
+        'light-red' : '#ffb8b8',
+        'dark-brown' : '#140c0c',
+        'less-dark-brown' : '#241414'
       },
       fontFamily: {
         'beach': ['var(--font-beach-resort)'],
