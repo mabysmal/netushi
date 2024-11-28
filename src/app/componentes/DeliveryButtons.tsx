@@ -18,7 +18,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({ deliveryLinks }) => {
             href={deliveryLinks.didifood.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center px-6 py-3 bg-orange-500 text-white rounded-2xl hover:bg-blue-600 transition-colors w-full lg:w-1/3"
+            className="flex items-center justify-center px-6 py-3 bg-orange-500 text-white rounded-2xl hover:bg-red focus:bg-dark-red transition-colors w-full lg:w-1/3"
           >
             <Image
               src="/didi-food.svg"
@@ -36,7 +36,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({ deliveryLinks }) => {
             href={deliveryLinks.ubereats.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center px-6 py-3 bg-[#40c165] text-white rounded-2xl hover:bg-[#37ab58] transition-colors w-full lg:w-1/3"
+            className="flex items-center justify-center px-6 py-3 bg-[#40c165] text-white rounded-2xl hover:bg-red focus:bg-dark-red transition-colors w-full lg:w-1/3"
           >
             <Image
               src="/uber-eats.svg"
@@ -54,7 +54,7 @@ const DeliveryButtons: React.FC<DeliveryButtonsProps> = ({ deliveryLinks }) => {
             href={deliveryLinks.rappi.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center px-6 py-3 bg-[#fa344e] text-white rounded-2xl hover:bg-orange-600 transition-colors w-full lg:w-1/3"
+            className="flex items-center justify-center px-6 py-3 bg-[#fa344e] text-white rounded-2xl hover:bg-red focus:bg-dark-red transition-colors w-full lg:w-1/3"
           >
             <Image
               src="/rappi.svg"
