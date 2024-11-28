@@ -49,6 +49,14 @@ export interface BusinessHour {
   closeTime?: string;
 }
 
+export type DaySchedule = {
+  isOpen: boolean;
+  openTime: string;
+  closeTime: string;
+};
+
+
+
 // export interface BusinessHours {
 //   monday: BusinessHour;
 //   tuesday: BusinessHour;
@@ -59,11 +67,6 @@ export interface BusinessHour {
 //   sunday: BusinessHour;
 // }
 
-export type DaySchedule = {
-  isOpen: boolean;
-  openTime: string;
-  closeTime: string;
-};
 
 
 // export interface BusinessHoursData {
