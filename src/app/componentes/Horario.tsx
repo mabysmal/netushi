@@ -14,13 +14,13 @@ const HorarioRestaurante: FC = () => {
   const [currentDay, setCurrentDay] = React.useState<string>('');
 
   const horario: HorarioItem[] = [
-    { dia: 'Lunes', horas: 'Cerrado' },
-    { dia: 'Martes', horas: '12:00 pm - 11:00 pm' },
-    { dia: 'Miércoles', horas: '12:00 pm - 11:00 pm' },
-    { dia: 'Jueves', horas: '12:00 pm - 11:00 pm' },
-    { dia: 'Viernes', horas: '12:00 pm - 11:00 pm' },
-    { dia: 'Sábado', horas: '12:00 pm - 11:00 pm' },
-    { dia: 'Domingo', horas: 'Cerrado' }
+    { dia: 'Lunes', horas: '06:00 pm - 11:00 pm' },
+    { dia: 'Martes', horas: 'Cerrado' },
+    { dia: 'Miércoles', horas: '06:00 pm - 11:00 pm' },
+    { dia: 'Jueves', horas: '06:00 pm - 11:00 pm' },
+    { dia: 'Viernes', horas: '06:00 pm - 11:00 pm' },
+    { dia: 'Sábado', horas: '06:00 pm - 11:00 pm' },
+    { dia: 'Domingo', horas: '06:00 pm - 11:00 pm' }
   ];
 
   const getDayName = (dayNumber: number): string => {
