@@ -15,7 +15,7 @@ public_folder: /images
 publish_mode: editorial_workflow
 locale: 'es'
 site_url: 'https://netushi.com'
-logo_url: 'Netushi'
+logo_url: '/Netushi.png'
 
 collections:
   - name: "banner-imagenes"
