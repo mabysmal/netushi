@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({
           © {new Date().getFullYear()} {companyName}. Todos los derechos reservados.
         </p>
         <span className="flex justify-center text-center text-md text-gray-600">
-            Made by: <a href="https://mabs.dev/" target="_blank" rel="noopener noreferrer"> mabs.dev</a>
+            {/* Made by: <a href="https://mabs.dev/" target="_blank" rel="noopener noreferrer"> mabs.dev</a> */}
           </span>
       </div>
     </footer>
